@@ -21,33 +21,42 @@ namespace APlayer
             InitializeComponent();
         }
 
+        bool isPlaying;
+        string ActionStr => isPlaying ? "Pause" : "Play";
         private void button1_Click(object sender, EventArgs e)
         {
-            wmp.controls.play();   
+            if (isPlaying)
+                wmp.controls.stop();
+            else
+                wmp.controls.play();
+            isPlaying = !isPlaying;
+            PlayandPause.Text = ActionStr;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            wmp.controls.stop();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFileDialog oFD = new OpenFileDialog();
-            oFD.Filter = "MP3|*.mp3";
-            oFD.Multiselect = true;
             if (oFD.ShowDialog() == DialogResult.OK)
-                wmp.URL = oFD.FileName;
+            {
+                oFD.Filter = "MP3|*.mp3";
+                wmp.URL = oFD.FileNames[0];
+                PlayList.Items.AddRange(oFD.FileNames);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            PlayList.Items.Clear();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+ 
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -57,22 +66,22 @@ namespace APlayer
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            wmp.controls.previous();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            wmp.controls.next();
         }
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
-
+            wmp.settings.volume = trackBarVolume.Value;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-
+            wmp.controls.currentPosition = trackBarAudio.Value;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

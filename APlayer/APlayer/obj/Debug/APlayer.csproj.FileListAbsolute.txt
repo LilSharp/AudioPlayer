@@ -10,3 +10,14 @@ H:\ИСП-31\Учебная практика ПМ.01\APlayer\APlayer\obj\Debug\A
 H:\ИСП-31\Учебная практика ПМ.01\APlayer\APlayer\obj\Debug\APlayer.pdb
 H:\ИСП-31\Учебная практика ПМ.01\APlayer\APlayer\obj\Debug\Interop.WMPLib.dll
 H:\ИСП-31\Учебная практика ПМ.01\APlayer\APlayer\obj\Debug\APlayer.csproj.ResolveComReference.cache
+C:\Users\PC\source\repos\APlayer\APlayer\bin\Debug\APlayer.exe.config
+C:\Users\PC\source\repos\APlayer\APlayer\bin\Debug\APlayer.exe
+C:\Users\PC\source\repos\APlayer\APlayer\bin\Debug\APlayer.pdb
+C:\Users\PC\source\repos\APlayer\APlayer\obj\Debug\APlayer.csprojAssemblyReference.cache
+C:\Users\PC\source\repos\APlayer\APlayer\obj\Debug\Interop.WMPLib.dll
+C:\Users\PC\source\repos\APlayer\APlayer\obj\Debug\APlayer.csproj.ResolveComReference.cache
+C:\Users\PC\source\repos\APlayer\APlayer\obj\Debug\APlayer.Form1.resources
+C:\Users\PC\source\repos\APlayer\APlayer\obj\Debug\APlayer.Properties.Resources.resources
+C:\Users\PC\source\repos\APlayer\APlayer\obj\Debug\APlayer.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\APlayer\APlayer\obj\Debug\APlayer.exe
+C:\Users\PC\source\repos\APlayer\APlayer\obj\Debug\APlayer.pdb
