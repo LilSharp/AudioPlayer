@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,13 +23,13 @@ namespace APlayer
         }
 
         bool isPlaying;
-        string ActionStr => isPlaying ? "Pause" : "Play";
+        string ActionStr => isPlaying ? "Play" : "Pause";
         private void button1_Click(object sender, EventArgs e)
         {
             if (isPlaying)
-                wmp.controls.stop();
-            else
                 wmp.controls.play();
+            else
+                wmp.controls.pause();
             isPlaying = !isPlaying;
             PlayandPause.Text = ActionStr;
         }
@@ -38,14 +39,24 @@ namespace APlayer
             wmp.controls.stop();
         }
 
+        List<string> playlist = new List<string>();
+        public void ShowPlaylist()
+        {
+            var names = playlist.Select(path => Path.GetFileNameWithoutExtension(path));
+            PlayList.Items.Clear();
+            PlayList.Items.AddRange(names.ToArray());
+        }
+        
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFileDialog oFD = new OpenFileDialog();
+            oFD.Multiselect = true;
+            oFD.Filter = "MP3|*.mp3";
             if (oFD.ShowDialog() == DialogResult.OK)
             {
-                oFD.Filter = "MP3|*.mp3";
-                wmp.URL = oFD.FileNames[0];
-                PlayList.Items.AddRange(oFD.FileNames);
+                playlist.AddRange(oFD.FileNames);
+                wmp.URL = playlist[0];
+                ShowPlaylist();
             }
         }
 

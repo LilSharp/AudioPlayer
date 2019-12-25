@@ -86,7 +86,7 @@
             // 
             // SaveList
             // 
-            this.SaveList.Location = new System.Drawing.Point(371, 196);
+            this.SaveList.Location = new System.Drawing.Point(371, 194);
             this.SaveList.Name = "SaveList";
             this.SaveList.Size = new System.Drawing.Size(75, 35);
             this.SaveList.TabIndex = 5;
