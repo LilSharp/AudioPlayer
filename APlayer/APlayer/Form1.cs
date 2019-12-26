@@ -23,15 +23,27 @@ namespace APlayer
         }
 
         bool isPlaying;
-        string ActionStr => isPlaying ? "Play" : "Pause";
-        private void button1_Click(object sender, EventArgs e)
+        string ActionStr => isPlaying ? "Pause" : "Play";
+        public void PlayOrPause()
         {
             if (isPlaying)
-                wmp.controls.play();
-            else
                 wmp.controls.pause();
+            else
+                wmp.controls.play();
             isPlaying = !isPlaying;
             PlayandPause.Text = ActionStr;
+        }
+
+        public void ForcePlay()
+        {
+            if (isPlaying) 
+                return;
+            PlayOrPause();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PlayOrPause();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,7 +51,7 @@ namespace APlayer
             wmp.controls.stop();
         }
 
-        List<string> playlist = new List<string>();
+        HashSet<string> playlist = new HashSet<string>();
         public void ShowPlaylist()
         {
             var names = playlist.Select(path => Path.GetFileNameWithoutExtension(path));
@@ -54,25 +66,31 @@ namespace APlayer
             oFD.Filter = "MP3|*.mp3";
             if (oFD.ShowDialog() == DialogResult.OK)
             {
-                playlist.AddRange(oFD.FileNames);
-                wmp.URL = playlist[0];
+                playlist.UnionWith(oFD.FileNames);
+                wmp.URL = oFD.FileNames[0];
                 ShowPlaylist();
+                ForcePlay();
             }
         }
 
+        public void ForceStop()
+        {
+            if (!isPlaying)
+                return;
+            PlayOrPause();
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             PlayList.Items.Clear();
+            playlist.Clear();
+            wmp.controls.stop();
+            ForceStop();
+            wmp.URL = null;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
  
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button7_Click(object sender, EventArgs e)

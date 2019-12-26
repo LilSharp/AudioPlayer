@@ -36,7 +36,6 @@
             this.SaveList = new System.Windows.Forms.Button();
             this.trackBarAudio = new System.Windows.Forms.TrackBar();
             this.trackBarVolume = new System.Windows.Forms.TrackBar();
-            this.LoadList = new System.Windows.Forms.Button();
             this.previousAudio = new System.Windows.Forms.Button();
             this.nextAudio = new System.Windows.Forms.Button();
             this.DeleteAudio = new System.Windows.Forms.Button();
@@ -78,17 +77,17 @@
             // 
             this.addAudio.Location = new System.Drawing.Point(371, 60);
             this.addAudio.Name = "addAudio";
-            this.addAudio.Size = new System.Drawing.Size(75, 35);
+            this.addAudio.Size = new System.Drawing.Size(75, 40);
             this.addAudio.TabIndex = 3;
-            this.addAudio.Text = "+";
+            this.addAudio.Text = "Add Audio";
             this.addAudio.UseVisualStyleBackColor = true;
             this.addAudio.Click += new System.EventHandler(this.button3_Click);
             // 
             // SaveList
             // 
-            this.SaveList.Location = new System.Drawing.Point(371, 194);
+            this.SaveList.Location = new System.Drawing.Point(371, 243);
             this.SaveList.Name = "SaveList";
-            this.SaveList.Size = new System.Drawing.Size(75, 35);
+            this.SaveList.Size = new System.Drawing.Size(75, 55);
             this.SaveList.TabIndex = 5;
             this.SaveList.Text = "Save PlayList";
             this.SaveList.UseVisualStyleBackColor = true;
@@ -99,7 +98,7 @@
             this.trackBarAudio.Location = new System.Drawing.Point(12, 127);
             this.trackBarAudio.Name = "trackBarAudio";
             this.trackBarAudio.Size = new System.Drawing.Size(302, 45);
-            this.trackBarAudio.TabIndex = 10;
+            this.trackBarAudio.TabIndex = 9;
             this.trackBarAudio.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // trackBarVolume
@@ -109,47 +108,37 @@
             this.trackBarVolume.Name = "trackBarVolume";
             this.trackBarVolume.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBarVolume.Size = new System.Drawing.Size(45, 117);
-            this.trackBarVolume.TabIndex = 9;
+            this.trackBarVolume.TabIndex = 8;
             this.trackBarVolume.Value = 50;
             this.trackBarVolume.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
-            // LoadList
-            // 
-            this.LoadList.Location = new System.Drawing.Point(371, 316);
-            this.LoadList.Name = "LoadList";
-            this.LoadList.Size = new System.Drawing.Size(75, 35);
-            this.LoadList.TabIndex = 6;
-            this.LoadList.Text = "Load PlayList";
-            this.LoadList.UseVisualStyleBackColor = true;
-            this.LoadList.Click += new System.EventHandler(this.button6_Click);
-            // 
             // previousAudio
             // 
-            this.previousAudio.Location = new System.Drawing.Point(37, 98);
+            this.previousAudio.Location = new System.Drawing.Point(37, 77);
             this.previousAudio.Name = "previousAudio";
             this.previousAudio.Size = new System.Drawing.Size(70, 23);
-            this.previousAudio.TabIndex = 7;
+            this.previousAudio.TabIndex = 6;
             this.previousAudio.Text = "<<";
             this.previousAudio.UseVisualStyleBackColor = true;
             this.previousAudio.Click += new System.EventHandler(this.button7_Click);
             // 
             // nextAudio
             // 
-            this.nextAudio.Location = new System.Drawing.Point(219, 98);
+            this.nextAudio.Location = new System.Drawing.Point(219, 77);
             this.nextAudio.Name = "nextAudio";
             this.nextAudio.Size = new System.Drawing.Size(70, 23);
-            this.nextAudio.TabIndex = 8;
+            this.nextAudio.TabIndex = 7;
             this.nextAudio.Text = ">>";
             this.nextAudio.UseVisualStyleBackColor = true;
             this.nextAudio.Click += new System.EventHandler(this.button8_Click);
             // 
             // DeleteAudio
             // 
-            this.DeleteAudio.Location = new System.Drawing.Point(371, 142);
+            this.DeleteAudio.Location = new System.Drawing.Point(371, 137);
             this.DeleteAudio.Name = "DeleteAudio";
-            this.DeleteAudio.Size = new System.Drawing.Size(75, 35);
+            this.DeleteAudio.Size = new System.Drawing.Size(75, 40);
             this.DeleteAudio.TabIndex = 4;
-            this.DeleteAudio.Text = "-";
+            this.DeleteAudio.Text = "Clear PlayList";
             this.DeleteAudio.UseVisualStyleBackColor = true;
             this.DeleteAudio.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -162,7 +151,6 @@
             this.Controls.Add(this.DeleteAudio);
             this.Controls.Add(this.nextAudio);
             this.Controls.Add(this.previousAudio);
-            this.Controls.Add(this.LoadList);
             this.Controls.Add(this.trackBarVolume);
             this.Controls.Add(this.trackBarAudio);
             this.Controls.Add(this.SaveList);
@@ -192,7 +180,6 @@
         private System.Windows.Forms.Button SaveList;
         private System.Windows.Forms.TrackBar trackBarAudio;
         private System.Windows.Forms.TrackBar trackBarVolume;
-        private System.Windows.Forms.Button LoadList;
         private System.Windows.Forms.Button previousAudio;
         private System.Windows.Forms.Button nextAudio;
         private System.Windows.Forms.Button DeleteAudio;
