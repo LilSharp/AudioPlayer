@@ -85,7 +85,8 @@ namespace APlayer
             playlist.Clear();
             wmp.controls.stop();
             ForceStop();
-            wmp.URL = null;
+            wmp = null;
+            wmp = new WindowsMediaPlayer();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -110,12 +111,13 @@ namespace APlayer
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            wmp.controls.currentPosition = trackBarAudio.Value;
+
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
